@@ -45,97 +45,11 @@ class OutputFormatter implements IOutputFormatter {
     }
 
     /**
-     * @param string $name
-     * @param string $color
-     * @param string $background
-     * @param string|array $format
-     * @param bool $allowInheritance
-     *
-     * @return IOutputStyle
-     */
-    public function style($name, $color = null, $background = null, $format = null, $allowInheritance = null) {
-        $style = new OutputStyle($name, $color, $background, $format, $allowInheritance);
-        $this->addStyle($style);
-
-        return $style;
-    }
-
-    /**
-     * @return bool
-     */
-    public function isAnsiEnabled() {
-        return $this->enableAnsi;
-    }
-
-    /**
-     * @param bool $enableAnsi
-     */
-    public function setEnableAnsi($enableAnsi) {
-        $this->enableAnsi = !! $enableAnsi;
-    }
-
-    /**
-     * @return IOutputStyle[]
-     */
-    public function getStyles() {
-        return $this->styles;
-    }
-
-    /**
-     * @param string $name
-     *
-     * @return IOutputStyle
-     */
-    public function getStyle($name) {
-        return array_get($this->getStyles(), $name);
-    }
-
-    /**
-     * @param string $name
-     *
-     * @return bool
-     */
-    public function hasStyle($name) {
-        return array_has($this->getStyles(), $name);
-    }
-
-    /**
-     * @param IOutputStyle[] $styles
-     */
-    public function setStyles(array $styles) {
-        $this->styles = [];
-        $this->addStyles($styles);
-    }
-
-    /**
-     * @param IOutputStyle[] $styles
-     */
-    public function addStyles(array $styles) {
-        foreach ($styles as $style) {
-            $this->addStyle($style);
-        }
-    }
-
-    /**
-     * @param IOutputStyle $style
-     */
-    public function addStyle(IOutputStyle $style) {
-        $this->styles[$style->getName()] = $style;
-    }
-
-    /**
-     * @return IFormatParser
-     */
-    protected function createFormatParser() {
-        return new FormatParser();
-    }
-
-    /**
      * @param $string
      *
      * @return string
      */
-    protected function formatAnsi($string) {
+    public function formatAnsi($string) {
         $styleStack = [];
 
         // match all tags like <tag> and </tag>
@@ -185,7 +99,6 @@ class OutputFormatter implements IOutputFormatter {
             $string = preg_replace($pattern, $escapeSequence, $string, 1);
         }
 
-
         return $string;
     }
 
@@ -194,7 +107,7 @@ class OutputFormatter implements IOutputFormatter {
      *
      * @return string
      */
-    protected function formatPlain($string) {
+    public function formatPlain($string) {
         $groups = $this->formatParser->parseFormat($string);
 
         foreach ($groups as $group) {
@@ -207,5 +120,91 @@ class OutputFormatter implements IOutputFormatter {
         }
 
         return $string;
+    }
+
+    /**
+     * @param string $name
+     * @param string $color
+     * @param string $background
+     * @param string|array $format
+     * @param bool $allowInheritance
+     *
+     * @return IOutputStyle
+     */
+    public function style($name, $color = null, $background = null, $format = null, $allowInheritance = null) {
+        $style = new OutputStyle($name, $color, $background, $format, $allowInheritance);
+        $this->addStyle($style);
+
+        return $style;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isAnsiEnabled() {
+        return $this->enableAnsi;
+    }
+
+    /**
+     * @param bool $enableAnsi
+     */
+    public function setEnableAnsi($enableAnsi) {
+        $this->enableAnsi = ! ! $enableAnsi;
+    }
+
+    /**
+     * @return IOutputStyle[]
+     */
+    public function getStyles() {
+        return $this->styles;
+    }
+
+    /**
+     * @param IOutputStyle[] $styles
+     */
+    public function setStyles(array $styles) {
+        $this->styles = [];
+        $this->addStyles($styles);
+    }
+
+    /**
+     * @param string $name
+     *
+     * @return IOutputStyle
+     */
+    public function getStyle($name) {
+        return array_get($this->getStyles(), $name);
+    }
+
+    /**
+     * @param string $name
+     *
+     * @return bool
+     */
+    public function hasStyle($name) {
+        return array_has($this->getStyles(), $name);
+    }
+
+    /**
+     * @param IOutputStyle[] $styles
+     */
+    public function addStyles(array $styles) {
+        foreach ($styles as $style) {
+            $this->addStyle($style);
+        }
+    }
+
+    /**
+     * @param IOutputStyle $style
+     */
+    public function addStyle(IOutputStyle $style) {
+        $this->styles[$style->getName()] = $style;
+    }
+
+    /**
+     * @return IFormatParser
+     */
+    protected function createFormatParser() {
+        return new FormatParser();
     }
 }

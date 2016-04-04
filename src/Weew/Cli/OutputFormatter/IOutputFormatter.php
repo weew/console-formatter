@@ -11,6 +11,20 @@ interface IOutputFormatter {
     function format($string);
 
     /**
+     * @param string $string
+     *
+     * @return string
+     */
+    function formatAnsi($string);
+
+    /**
+     * @param string $string
+     *
+     * @return string
+     */
+    function formatPlain($string);
+
+    /**
      * @param string $name
      * @param string $color
      * @param string $background
