@@ -99,6 +99,8 @@ class OutputFormatter implements IOutputFormatter {
             $string = preg_replace($pattern, $escapeSequence, $string, 1);
         }
 
+        $string = $this->formatParser->unescapeTags($string);
+
         return $string;
     }
 
@@ -118,6 +120,8 @@ class OutputFormatter implements IOutputFormatter {
                 $string = str_replace($tag, '', $string);
             }
         }
+
+        $string = $this->formatParser->unescapeTags($string);
 
         return $string;
     }

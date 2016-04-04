@@ -11,7 +11,7 @@ class FormatParser implements IFormatParser {
     public function parseFormat($string) {
         $groups = [];
 
-        if (preg_match_all("#<[/]?(\w+)([\sa-z0-9=_;,]*)>#", $string, $matches, PREG_SET_ORDER) !== false) {
+        if (preg_match_all("#(?<!\\\\)<[/]?(\w+)([\sa-z0-9=_;,]*)>#", $string, $matches, PREG_SET_ORDER) !== false) {
             $groups = $matches;
         }
 
@@ -31,5 +31,14 @@ class FormatParser implements IFormatParser {
         }
 
         return $groups;
+    }
+
+    /**
+     * @param string $string
+     *
+     * @return string
+     */
+    public function unescapeTags($string) {
+        return preg_replace("#\\\\<#", '<', $string);
     }
 }

@@ -16,4 +16,11 @@ interface IFormatParser {
      * @return array
      */
     function parseStyle($string);
+
+    /**
+     * @param string $string
+     *
+     * @return string
+     */
+    function unescapeTags($string);
 }

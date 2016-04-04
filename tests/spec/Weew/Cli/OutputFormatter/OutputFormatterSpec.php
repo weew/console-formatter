@@ -93,17 +93,17 @@ class OutputFormatterSpec extends ObjectBehavior {
             ->setBackground('red')
             ->setFormat('italic');
 
-        $result = $this->format('<style color=red><red>red<blue>blue<red>red</red></blue>red</red></style>')->getWrappedObject();
+        $result = $this->format('<style color=red><red>red<blue>blue\<x><red>red</red></blue>red</red></style>')->getWrappedObject();
         $result = str_replace("\e", '', $result);
-        $expected = '[0;31m[0;31;107;1;2mred[34;41;3mblue[0;31;107;1;2mred[34;41;3m[0;31;107;1;2mred[0;31m[0m';
+        $expected = '[0;31m[0;31;107;1;2mred[34;41;3mblue<x>[0;31;107;1;2mred[34;41;3m[0;31;107;1;2mred[0;31m[0m';
 
         it($result)->shouldBe($expected);
     }
 
     function it_formats_without_ansi_and_styles() {
         $this->setEnableAnsi(false);
-        $this->format('<style color=red><red>red<blue>blue<red>red</red></blue>red</red></style>')
-            ->shouldBe('<red>red<blue>blue<red>red</red></blue>red</red>');
+        $this->format('<style color=red><red>red<blue>blue\<x><red>red</red></blue>red</red></style>')
+            ->shouldBe('<red>red<blue>blue<x><red>red</red></blue>red</red>');
     }
 
     function it_formats_without_ansi_and_with_styles() {

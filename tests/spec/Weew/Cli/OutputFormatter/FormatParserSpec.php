@@ -23,7 +23,7 @@ class FormatParserSpec extends ObjectBehavior {
         ];
 
         $this->parseFormat(
-            'text<tag1 prop=val1,val2 prop=val3>text<tag2>text</tag2>text</tag1>text'
+            'text<tag1 prop=val1,val2 prop=val3>text\<ignore><tag2>text</tag2>text</tag1>text'
         )->shouldBe($expected);
     }
 
@@ -45,5 +45,10 @@ class FormatParserSpec extends ObjectBehavior {
         $this->parseStyle(
             'color=red,blue;background=lime,yellow; format=bold,italic>'
         )->shouldBe($expected);
+    }
+
+    function it_unescapes_tags() {
+        $this->unescapeTags('<tag> \<tag>')
+            ->shouldBe('<tag> <tag>');
     }
 }
