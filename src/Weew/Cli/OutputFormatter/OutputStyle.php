@@ -70,7 +70,7 @@ class OutputStyle implements IOutputStyle {
             $type = $group[1];
             $value = $group[2];
 
-            if (in_array($type, ['color', 'fg'])) {
+            if (in_array($type, ['color', 'clr', 'fg'])) {
                 foreach (explode(',', $value) as $color) {
                     $this->setColor($color);
                 }
