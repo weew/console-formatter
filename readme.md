@@ -1,16 +1,16 @@
 # Output Formatter for command line
 
-[![Build Status](https://img.shields.io/travis/weew/php-cli-output-formatter.svg)](https://travis-ci.org/weew/php-cli-output-formatter)
-[![Code Quality](https://img.shields.io/scrutinizer/g/weew/php-cli-output-formatter.svg)](https://scrutinizer-ci.com/g/weew/php-cli-output-formatter)
-[![Test Coverage](https://img.shields.io/coveralls/weew/php-cli-output-formatter.svg)](https://coveralls.io/github/weew/php-cli-output-formatter)
-[![Version](https://img.shields.io/packagist/v/weew/php-cli-output-formatter.svg)](https://packagist.org/packages/weew/php-cli-output-formatter)
-[![Licence](https://img.shields.io/packagist/l/weew/php-cli-output-formatter.svg)](https://packagist.org/packages/weew/php-cli-output-formatter)
+[![Build Status](https://img.shields.io/travis/weew/php-console-formatter.svg)](https://travis-ci.org/weew/php-console-formatter)
+[![Code Quality](https://img.shields.io/scrutinizer/g/weew/php-console-formatter.svg)](https://scrutinizer-ci.com/g/weew/php-console-formatter)
+[![Test Coverage](https://img.shields.io/coveralls/weew/php-console-formatter.svg)](https://coveralls.io/github/weew/php-console-formatter)
+[![Version](https://img.shields.io/packagist/v/weew/php-console-formatter.svg)](https://packagist.org/packages/weew/php-console-formatter)
+[![Licence](https://img.shields.io/packagist/l/weew/php-console-formatter.svg)](https://packagist.org/packages/weew/php-console-formatter)
 
 ## Table of contents
 
 ## Installation
 
-`composer require weew/php-cli-output-formatter`
+`composer require weew/php-console-formatter`
 
 ## Introduction
 
@@ -23,7 +23,7 @@ This package **has not been tested on windows** and I do not intend to do so. Co
 Before you'll be able to use styles, you must created them first.
 
 ```php
-$formatter = new OutputFormatter();
+$formatter = new ConsoleFormatter();
 
 $style = (new OutputStyle('alert'))
     ->setColor(OutputColor::WHITE)
