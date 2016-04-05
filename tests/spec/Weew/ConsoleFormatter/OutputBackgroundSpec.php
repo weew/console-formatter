@@ -1,10 +1,10 @@
 <?php
 
-namespace tests\spec\Weew\Cli\OutputFormatter;
+namespace tests\spec\Weew\ConsoleFormatter;
 
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
-use Weew\Cli\OutputFormatter\OutputBackground;
+use Weew\ConsoleFormatter\OutputBackground;
 
 /**
  * @mixin OutputBackground

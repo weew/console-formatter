@@ -1,11 +1,11 @@
 <?php
 
-namespace tests\spec\Weew\Cli\OutputFormatter;
+namespace tests\spec\Weew\ConsoleFormatter;
 
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
-use Weew\Cli\OutputFormatter\FormatParser;
-use Weew\Cli\OutputFormatter\OutputStyle;
+use Weew\ConsoleFormatter\FormatParser;
+use Weew\ConsoleFormatter\OutputStyle;
 
 /**
  * @mixin OutputStyle

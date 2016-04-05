@@ -1,8 +1,8 @@
 <?php
 
-namespace Weew\Cli\OutputFormatter;
+namespace Weew\ConsoleFormatter;
 
-class OutputFormatter implements IOutputFormatter {
+class ConsoleFormatter implements IConsoleFormatter {
     /**
      * @var IOutputStyle[]
      */
@@ -19,7 +19,7 @@ class OutputFormatter implements IOutputFormatter {
     protected $enableAnsi;
 
     /**
-     * OutputFormatter constructor.
+     * ConsoleFormatter constructor.
      *
      * @param IOutputStyle[] $styles
      * @param bool $enableAnsi

@@ -1,13 +1,13 @@
 <?php
 
-use Weew\Cli\OutputFormatter\OutputBackground;
-use Weew\Cli\OutputFormatter\OutputColor;
-use Weew\Cli\OutputFormatter\OutputFormat;
-use Weew\Cli\OutputFormatter\OutputFormatter;
+use Weew\ConsoleFormatter\OutputBackground;
+use Weew\ConsoleFormatter\OutputColor;
+use Weew\ConsoleFormatter\OutputFormat;
+use Weew\ConsoleFormatter\ConsoleFormatter;
 
 require 'vendor/autoload.php';
 
-$formatter = new OutputFormatter();
+$formatter = new ConsoleFormatter();
 
 $formatter->style('error')
     ->setColor(OutputColor::WHITE)

@@ -1,6 +1,6 @@
 <?php
 
-namespace Weew\Cli\OutputFormatter;
+namespace Weew\ConsoleFormatter;
 
 interface IOutputStyle {
     /**

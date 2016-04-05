@@ -1,18 +1,18 @@
 <?php
 
-namespace tests\spec\Weew\Cli\OutputFormatter;
+namespace tests\spec\Weew\ConsoleFormatter;
 
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
-use Weew\Cli\OutputFormatter\OutputFormatter;
-use Weew\Cli\OutputFormatter\OutputStyle;
+use Weew\ConsoleFormatter\ConsoleFormatter;
+use Weew\ConsoleFormatter\OutputStyle;
 
 /**
- * @mixin OutputFormatter
+ * @mixin ConsoleFormatter
  */
-class OutputFormatterSpec extends ObjectBehavior {
+class ConsoleFormatterSpec extends ObjectBehavior {
     function it_is_initializable() {
-        $this->shouldHaveType(OutputFormatter::class);
+        $this->shouldHaveType(ConsoleFormatter::class);
     }
 
     function it_takes_styles_trough_the_constructor() {

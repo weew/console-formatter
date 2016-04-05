@@ -1,8 +1,8 @@
 <?php
 
-namespace Weew\Cli\OutputFormatter;
+namespace Weew\ConsoleFormatter;
 
-interface IOutputFormatter {
+interface IConsoleFormatter {
     /**
      * @param string $string
      *

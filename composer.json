@@ -1,5 +1,5 @@
 {
-    "name": "weew/php-cli-output-formatter",
+    "name": "weew/php-console-formatter",
     "description": "Formatter for command line output.",
     "license": "MIT",
     "authors": [
