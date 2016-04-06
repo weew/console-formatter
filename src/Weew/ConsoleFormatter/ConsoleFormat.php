@@ -2,7 +2,7 @@
 
 namespace Weew\ConsoleFormatter;
 
-class OutputFormat {
+class ConsoleFormat {
     const NORMAL = 'normal';
     const BOLD = 'bold';
     const DIM = 'dim';

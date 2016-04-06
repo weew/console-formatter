@@ -4,14 +4,14 @@ namespace tests\spec\Weew\ConsoleFormatter;
 
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
-use Weew\ConsoleFormatter\OutputColor;
+use Weew\ConsoleFormatter\ConsoleColor;
 
 /**
- * @mixin OutputColor
+ * @mixin ConsoleColor
  */
-class OutputColorSpec extends ObjectBehavior {
+class ConsoleColorSpec extends ObjectBehavior {
     function it_is_initializable() {
-        $this->shouldHaveType(OutputColor::class);
+        $this->shouldHaveType(ConsoleColor::class);
     }
 
     function it_returns_code() {

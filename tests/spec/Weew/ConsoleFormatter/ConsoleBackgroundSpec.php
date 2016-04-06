@@ -4,14 +4,14 @@ namespace tests\spec\Weew\ConsoleFormatter;
 
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
-use Weew\ConsoleFormatter\OutputBackground;
+use Weew\ConsoleFormatter\ConsoleBackground;
 
 /**
- * @mixin OutputBackground
+ * @mixin ConsoleBackground
  */
-class OutputBackgroundSpec extends ObjectBehavior {
+class ConsoleBackgroundSpec extends ObjectBehavior {
     function it_is_initializable() {
-        $this->shouldHaveType(OutputBackground::class);
+        $this->shouldHaveType(ConsoleBackground::class);
     }
 
     function it_returns_code() {

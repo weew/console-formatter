@@ -25,18 +25,18 @@ Before you'll be able to use styles, you must created them first.
 ```php
 $formatter = new ConsoleFormatter();
 
-$style = (new OutputStyle('alert'))
-    ->setColor(OutputColor::WHITE)
-    ->setBackground(OutputBackground::RED)
-    ->setFormat([OutputFormat::BOLD, OutputFormat::UNDERLINE]);
+$style = (new ConsoleStyle('alert'))
+    ->setColor(ConsoleColor::WHITE)
+    ->setBackground(ConsoleBackground::RED)
+    ->setFormat([ConsoleFormat::BOLD, ConsoleFormat::UNDERLINE]);
 $formatter->addStyle($style);
 
 // or
 
 $formatter->style('alert')
-    ->setColor(OutputColor::WHITE)
-    ->setBackground(OutputBackground::RED)
-    ->setFormat([OutputFormat::BOLD, OutputFormat::UNDERLINE]);
+    ->setColor(ConsoleColor::WHITE)
+    ->setBackground(ConsoleBackground::RED)
+    ->setFormat([ConsoleFormat::BOLD, ConsoleFormat::UNDERLINE]);
 
 // or
 

@@ -2,7 +2,7 @@
 
 namespace Weew\ConsoleFormatter;
 
-class OutputStyle implements IOutputStyle {
+class ConsoleStyle implements IConsoleStyle {
     /**
      * @var string
      */
@@ -34,7 +34,7 @@ class OutputStyle implements IOutputStyle {
     protected $formatParser;
 
     /**
-     * OutputStyle constructor.
+     * ConsoleStyle constructor.
      *
      * @param string $name
      * @param string $color
@@ -61,7 +61,7 @@ class OutputStyle implements IOutputStyle {
     /**
      * @param string $style
      *
-     * @return IOutputStyle
+     * @return IConsoleStyle
      */
     public function parseStyle($style) {
         $groups = $this->formatParser->parseStyle($style);
@@ -102,20 +102,20 @@ class OutputStyle implements IOutputStyle {
             $styleCodes[] = 0;
         }
 
-        $colorCode = OutputColor::getColorCode($this->getColor());
+        $colorCode = ConsoleColor::getColorCode($this->getColor());
 
         if ($colorCode !== null) {
             $styleCodes[] = $colorCode;
         }
 
-        $backgroundCode = OutputBackground::getBackgroundCode($this->getBackground());
+        $backgroundCode = ConsoleBackground::getBackgroundCode($this->getBackground());
 
         if ($backgroundCode !== null) {
             $styleCodes[] = $backgroundCode;
         }
 
         foreach ($this->getFormat() as $format) {
-            $formatCode = OutputFormat::getFormatCode($format);
+            $formatCode = ConsoleFormat::getFormatCode($format);
 
             if ($formatCode !== null) {
                 $styleCodes[] = $formatCode;
@@ -135,7 +135,7 @@ class OutputStyle implements IOutputStyle {
     /**
      * @param bool $allowInheritance
      *
-     * @return IOutputStyle
+     * @return IConsoleStyle
      */
     public function allowInheritance($allowInheritance) {
         $this->allowInheritance = !! $allowInheritance;
@@ -153,7 +153,7 @@ class OutputStyle implements IOutputStyle {
     /**
      * @param string $name
      *
-     * @return IOutputStyle
+     * @return IConsoleStyle
      */
     public function setName($name) {
         $this->name = $name;
@@ -171,7 +171,7 @@ class OutputStyle implements IOutputStyle {
     /**
      * @param string $color
      *
-     * @return IOutputStyle
+     * @return IConsoleStyle
      */
     public function setColor($color) {
         $this->color = $color;
@@ -189,7 +189,7 @@ class OutputStyle implements IOutputStyle {
     /**
      * @param string $background
      *
-     * @return IOutputStyle
+     * @return IConsoleStyle
      */
     public function setBackground($background) {
         $this->background = $background;
@@ -207,7 +207,7 @@ class OutputStyle implements IOutputStyle {
     /**
      * @param array|string $format
      *
-     * @return IOutputStyle
+     * @return IConsoleStyle
      */
     public function setFormat($format) {
         if ($format === null) {
@@ -224,7 +224,7 @@ class OutputStyle implements IOutputStyle {
     /**
      * @param string $format
      *
-     * @return IOutputStyle
+     * @return IConsoleStyle
      */
     public function addFormat($format) {
         $this->format[] = $format;

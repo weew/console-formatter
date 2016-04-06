@@ -4,14 +4,14 @@ namespace tests\spec\Weew\ConsoleFormatter;
 
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
-use Weew\ConsoleFormatter\OutputFormat;
+use Weew\ConsoleFormatter\ConsoleFormat;
 
 /**
- * @mixin OutputFormat
+ * @mixin ConsoleFormat
  */
-class OutputFormatSpec extends ObjectBehavior {
+class ConsoleFormatSpec extends ObjectBehavior {
     function it_is_initializable() {
-        $this->shouldHaveType(OutputFormat::class);
+        $this->shouldHaveType(ConsoleFormat::class);
     }
 
     function it_returns_code() {

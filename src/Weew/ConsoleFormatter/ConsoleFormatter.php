@@ -4,7 +4,7 @@ namespace Weew\ConsoleFormatter;
 
 class ConsoleFormatter implements IConsoleFormatter {
     /**
-     * @var IOutputStyle[]
+     * @var IConsoleStyle[]
      */
     protected $styles = [];
 
@@ -21,7 +21,7 @@ class ConsoleFormatter implements IConsoleFormatter {
     /**
      * ConsoleFormatter constructor.
      *
-     * @param IOutputStyle[] $styles
+     * @param IConsoleStyle[] $styles
      * @param bool $enableAnsi
      */
     public function __construct(array $styles = [], $enableAnsi = true) {
@@ -76,12 +76,12 @@ class ConsoleFormatter implements IConsoleFormatter {
                 }
             } else {
                 if ($styleName === 'style') {
-                    $style = new OutputStyle('style');
+                    $style = new ConsoleStyle('style');
                 } else {
                     $style = $this->getStyle($styleName);
                 }
 
-                if ($style instanceof IOutputStyle) {
+                if ($style instanceof IConsoleStyle) {
                     // clone style to prevent unwanted
                     // modification on future uses
                     $style = clone $style;
@@ -133,10 +133,10 @@ class ConsoleFormatter implements IConsoleFormatter {
      * @param string|array $format
      * @param bool $allowInheritance
      *
-     * @return IOutputStyle
+     * @return IConsoleStyle
      */
     public function style($name, $color = null, $background = null, $format = null, $allowInheritance = null) {
-        $style = new OutputStyle($name, $color, $background, $format, $allowInheritance);
+        $style = new ConsoleStyle($name, $color, $background, $format, $allowInheritance);
         $this->addStyle($style);
 
         return $style;
@@ -157,14 +157,14 @@ class ConsoleFormatter implements IConsoleFormatter {
     }
 
     /**
-     * @return IOutputStyle[]
+     * @return IConsoleStyle[]
      */
     public function getStyles() {
         return $this->styles;
     }
 
     /**
-     * @param IOutputStyle[] $styles
+     * @param IConsoleStyle[] $styles
      */
     public function setStyles(array $styles) {
         $this->styles = [];
@@ -174,7 +174,7 @@ class ConsoleFormatter implements IConsoleFormatter {
     /**
      * @param string $name
      *
-     * @return IOutputStyle
+     * @return IConsoleStyle
      */
     public function getStyle($name) {
         return array_get($this->getStyles(), $name);
@@ -190,7 +190,7 @@ class ConsoleFormatter implements IConsoleFormatter {
     }
 
     /**
-     * @param IOutputStyle[] $styles
+     * @param IConsoleStyle[] $styles
      */
     public function addStyles(array $styles) {
         foreach ($styles as $style) {
@@ -199,9 +199,9 @@ class ConsoleFormatter implements IConsoleFormatter {
     }
 
     /**
-     * @param IOutputStyle $style
+     * @param IConsoleStyle $style
      */
-    public function addStyle(IOutputStyle $style) {
+    public function addStyle(IConsoleStyle $style) {
         $this->styles[$style->getName()] = $style;
     }
 

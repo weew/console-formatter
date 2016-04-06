@@ -5,7 +5,7 @@ namespace tests\spec\Weew\ConsoleFormatter;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 use Weew\ConsoleFormatter\ConsoleFormatter;
-use Weew\ConsoleFormatter\OutputStyle;
+use Weew\ConsoleFormatter\ConsoleStyle;
 
 /**
  * @mixin ConsoleFormatter
@@ -16,13 +16,13 @@ class ConsoleFormatterSpec extends ObjectBehavior {
     }
 
     function it_takes_styles_trough_the_constructor() {
-        $style = new OutputStyle('name');
+        $style = new ConsoleStyle('name');
         $this->beConstructedWith([$style]);
         $this->getStyles()->shouldBe(['name' => $style]);
     }
 
     function it_takes_and_returns_styles() {
-        $style = new OutputStyle('name');
+        $style = new ConsoleStyle('name');
         $this->setStyles([$style]);
         $this->getStyles()->shouldBe(['name' => $style]);
     }
@@ -34,8 +34,8 @@ class ConsoleFormatterSpec extends ObjectBehavior {
     }
 
     function it_adds_style() {
-        $style1 = new OutputStyle('name1');
-        $style2 = new OutputStyle('name2');
+        $style1 = new ConsoleStyle('name1');
+        $style2 = new ConsoleStyle('name2');
         $this->addStyle($style1);
         $this->addStyle($style2);
 
@@ -44,8 +44,8 @@ class ConsoleFormatterSpec extends ObjectBehavior {
     }
 
     function it_adds_styles() {
-        $style1 = new OutputStyle('name1');
-        $style2 = new OutputStyle('name2');
+        $style1 = new ConsoleStyle('name1');
+        $style2 = new ConsoleStyle('name2');
         $this->addStyles([$style1]);
         $this->addStyles([$style2]);
 
@@ -55,12 +55,12 @@ class ConsoleFormatterSpec extends ObjectBehavior {
 
     function it_can_tell_if_it_has_a_style() {
         $this->hasStyle('name')->shouldBe(false);
-        $this->addStyle(new OutputStyle('name'));
+        $this->addStyle(new ConsoleStyle('name'));
         $this->hasStyle('name')->shouldBe(true);
     }
 
     function it_can_return_a_style() {
-        $style = new OutputStyle('name');
+        $style = new ConsoleStyle('name');
         $this->getStyle('name')->shouldBe(null);
         $this->addStyle($style);
         $this->getStyle('name')->shouldBe($style);

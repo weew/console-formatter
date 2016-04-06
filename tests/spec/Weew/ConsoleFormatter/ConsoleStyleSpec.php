@@ -5,18 +5,18 @@ namespace tests\spec\Weew\ConsoleFormatter;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 use Weew\ConsoleFormatter\FormatParser;
-use Weew\ConsoleFormatter\OutputStyle;
+use Weew\ConsoleFormatter\ConsoleStyle;
 
 /**
- * @mixin OutputStyle
+ * @mixin ConsoleStyle
  */
-class OutputStyleSpec extends ObjectBehavior {
+class ConsoleStyleSpec extends ObjectBehavior {
     function let(FormatParser $parser) {
         $this->beConstructedWith('name');
     }
 
     function it_is_initializable() {
-        $this->shouldHaveType(OutputStyle::class);
+        $this->shouldHaveType(ConsoleStyle::class);
     }
 
     function it_takes_arguments_trough_the_constructor() {

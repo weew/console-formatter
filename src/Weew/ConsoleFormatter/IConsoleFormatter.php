@@ -31,7 +31,7 @@ interface IConsoleFormatter {
      * @param string $format
      * @param bool $allowInheritance
      *
-     * @return IOutputStyle
+     * @return IConsoleStyle
      */
     function style($name, $color = null, $background = null, $format = null, $allowInheritance = null);
 
@@ -46,14 +46,14 @@ interface IConsoleFormatter {
     function setEnableAnsi($enableAnsi);
 
     /**
-     * @return IOutputStyle[]
+     * @return IConsoleStyle[]
      */
     function getStyles();
 
     /**
      * @param $name
      *
-     * @return IOutputStyle
+     * @return IConsoleStyle
      */
     function getStyle($name);
 
@@ -65,17 +65,17 @@ interface IConsoleFormatter {
     function hasStyle($name);
 
     /**
-     * @param IOutputStyle[] $styles
+     * @param IConsoleStyle[] $styles
      */
     function setStyles(array $styles);
 
     /**
-     * @param IOutputStyle[] $styles
+     * @param IConsoleStyle[] $styles
      */
     function addStyles(array $styles);
 
     /**
-     * @param IOutputStyle $style
+     * @param IConsoleStyle $style
      */
-    function addStyle(IOutputStyle $style);
+    function addStyle(IConsoleStyle $style);
 }

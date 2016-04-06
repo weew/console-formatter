@@ -2,11 +2,11 @@
 
 namespace Weew\ConsoleFormatter;
 
-interface IOutputStyle {
+interface IConsoleStyle {
     /**
      * @param string $style
      *
-     * @return IOutputStyle
+     * @return IConsoleStyle
      */
     function parseStyle($style);
 
@@ -23,7 +23,7 @@ interface IOutputStyle {
     /**
      * @param string $name
      *
-     * @return IOutputStyle
+     * @return IConsoleStyle
      */
     function setName($name);
 
@@ -35,7 +35,7 @@ interface IOutputStyle {
     /**
      * @param bool $allowInheritance
      *
-     * @return IOutputStyle
+     * @return IConsoleStyle
      */
     function allowInheritance($allowInheritance);
 
@@ -47,7 +47,7 @@ interface IOutputStyle {
     /**
      * @param string $color
      *
-     * @return IOutputStyle
+     * @return IConsoleStyle
      */
     function setColor($color);
 
@@ -59,7 +59,7 @@ interface IOutputStyle {
     /**
      * @param string $background
      *
-     * @return IOutputStyle
+     * @return IConsoleStyle
      */
     function setBackground($background);
 
@@ -71,14 +71,14 @@ interface IOutputStyle {
     /**
      * @param array|string $format
      *
-     * @return IOutputStyle
+     * @return IConsoleStyle
      */
     function setFormat($format);
 
     /**
      * @param string $format
      *
-     * @return IOutputStyle
+     * @return IConsoleStyle
      */
     function addFormat($format);
 }

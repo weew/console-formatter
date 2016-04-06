@@ -2,7 +2,7 @@
 
 namespace Weew\ConsoleFormatter;
 
-class OutputColor {
+class ConsoleColor {
     const NORMAL = 'normal';
     const BLACK = 'black';
     const RED = 'red';
