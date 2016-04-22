@@ -70,19 +70,19 @@ class ConsoleStyle implements IConsoleStyle {
             $type = $group[1];
             $value = $group[2];
 
-            if (in_array($type, ['color', 'clr', 'fg'])) {
+            if (array_contains(['color', 'clr', 'fg'], $type)) {
                 foreach (explode(',', $value) as $color) {
                     $this->setColor($color);
                 }
             }
 
-            if (in_array($type, ['background', 'bg'])) {
+            if (array_contains(['background', 'bg'], $type)) {
                 foreach (explode(',', $value) as $background) {
                     $this->setBackground($background);
                 }
             }
 
-            if (in_array($type, ['format', 'fmt'])) {
+            if (array_contains(['format', 'fmt'], $type)) {
                 foreach (explode(',', $value) as $format) {
                     $this->addFormat($format);
                 }
