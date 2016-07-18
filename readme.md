@@ -1,16 +1,16 @@
 # Output Formatter for command line
 
-[![Build Status](https://img.shields.io/travis/weew/php-console-formatter.svg)](https://travis-ci.org/weew/php-console-formatter)
-[![Code Quality](https://img.shields.io/scrutinizer/g/weew/php-console-formatter.svg)](https://scrutinizer-ci.com/g/weew/php-console-formatter)
-[![Test Coverage](https://img.shields.io/coveralls/weew/php-console-formatter.svg)](https://coveralls.io/github/weew/php-console-formatter)
-[![Version](https://img.shields.io/packagist/v/weew/php-console-formatter.svg)](https://packagist.org/packages/weew/php-console-formatter)
-[![Licence](https://img.shields.io/packagist/l/weew/php-console-formatter.svg)](https://packagist.org/packages/weew/php-console-formatter)
+[![Build Status](https://img.shields.io/travis/weew/console-formatter.svg)](https://travis-ci.org/weew/console-formatter)
+[![Code Quality](https://img.shields.io/scrutinizer/g/weew/console-formatter.svg)](https://scrutinizer-ci.com/g/weew/console-formatter)
+[![Test Coverage](https://img.shields.io/coveralls/weew/console-formatter.svg)](https://coveralls.io/github/weew/console-formatter)
+[![Version](https://img.shields.io/packagist/v/weew/console-formatter.svg)](https://packagist.org/packages/weew/console-formatter)
+[![Licence](https://img.shields.io/packagist/l/weew/console-formatter.svg)](https://packagist.org/packages/weew/console-formatter)
 
 ## Table of contents
 
 ## Installation
 
-`composer require weew/php-console-formatter`
+`composer require weew/console-formatter`
 
 ## Introduction
 
